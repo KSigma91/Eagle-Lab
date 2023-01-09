@@ -24,7 +24,7 @@
                             <router-link class="nav-link" to="/tools">Strumentazione</router-link>
                         </li>
                         <li class="nav-item dropdown position-relative">
-                            <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link" href="/gallery" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Galleria
                             </a>
                             <!-- <ul class="dropdown-menu dropdown-menu-dark border-0 rounded-0 p-3 shadow" style="margin-top: 15px" role="menu" aria-labelledby="dLabel">
@@ -85,7 +85,7 @@ export default {
             // padding: 29px 0;
             color: #fff;
             font-size: .9rem;
-            font-weight: 400;
+            font-weight: 300;
 
             &:hover {
                 color: #f5bc41;

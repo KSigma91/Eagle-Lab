@@ -1,16 +1,22 @@
 <template>
   <div id="app">
     <NavbarApp />
+    <main>
+      <router-view></router-view>
+    </main>
+    <FooterApp />
   </div>
 </template>
 
 <script>
 import NavbarApp from './components/NavbarApp.vue'
+import FooterApp from './components/FooterApp.vue'
 
 export default {
   name: 'App',
   components: {
-    NavbarApp
+    NavbarApp,
+    FooterApp
   }
 }
 </script>
