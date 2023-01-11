@@ -1,19 +1,21 @@
 <template>
-    <div id="jumbotron" class="position-relative">
-        <div class="d-flex">
-            <video width="100%" autoplay loop plays-inline>
-                <source src="../assets/EagleLabLoop_Site.webm" type="video/webm">
-            </video>
+    <div>
+        <div id="jumbotron" class="position-relative">
+            <div class="d-flex">
+                <video width="100%" autoplay loop plays-inline>
+                    <source src="../assets/EagleLabLoop_Site.webm" type="video/webm">
+                </video>
+            </div>
+            <div class="position-absolute top-50 start-50 translate-middle text-white">
+                <p class="fs-2">
+                    Non hai visto un albero finchè non hai visto la sua ombra dal cielo
+                </p>
+                <hr class="m-auto my-2 opacity-100">
+                <small class="fs-6">Amelia Earhart</small>
+            </div>
+            <div class="container-fluid h-25"></div>
+            <div id="gradient"></div>
         </div>
-        <div class="position-absolute top-50 start-50 translate-middle text-white">
-            <p class="fs-2">
-                Non hai visto un albero finchè non hai visto la sua ombra dal cielo
-            </p>
-            <hr class="m-auto my-2 opacity-100">
-            <small class="fs-6">Amelia Earhart</small>
-        </div>
-        <div class="container-fluid h-25"></div>
-        <div id="gradient"></div>
         <div class="tools__container d-flex justify-content-center justify-content-md-center justify-content-lg-start align-items-center">
             <div class="tools__items d-flex flex-column align-items-start gap-3 text-start text-white lh-base">
                 <h2>
@@ -22,9 +24,8 @@
                 <p class="fs-5">
                     per svolgere al meglio attività di rilievo, ispezioni, fotogrammetria e servizi fotografici
                 </p>
-                <router-link to="/tools" class="btn btn-outline-warning px-4 py-2 rounded-0 border border-warning border-2 text-light fw-light">Scopri di più</router-link>
+                <router-link to="/tool" class="btn btn-outline-warning px-4 py-2 rounded-0 border border-warning border-2 text-light fw-light">Scopri di più</router-link>
             </div>
-            
         </div>
         <div class="pilot__container d-flex justify-content-center justify-content-md-center justify-content-lg-end align-items-center mb-5">
             <div class="pilot__items d-flex flex-column align-items-start gap-3 text-start text-dark lh-base">
@@ -34,7 +35,7 @@
                 <p class="fs-5 text-secondary">
                     Svolgiamo attività specializzate in situazioni critiche
                 </p>
-                <router-link to="/services" class="btn btn-outline-warning px-4 py-2 rounded-0 border border-warning border-2 text-dark fw-light">Scopri di più</router-link>
+                <router-link to="/service" class="btn btn-outline-warning px-4 py-2 rounded-0 border border-warning border-2 text-dark fw-light">Scopri di più</router-link>
             </div>
         </div>
         <div>
@@ -62,7 +63,7 @@
                 <div class="d-flex flex-column align-items-start gap-3 ms-0 ms-lg-5 my-5 text-start">
                     <h2>Eagle Lab YouTube</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate dolore ad aspernatur ratione aperiam quos saepe adipisci. Accusantium reiciendis exercitationem earum tempore suscipit quidem officiis incidunt, ratione iure, asperiores minus!</p>
-                    <a href="" class="btn btn-outline-warning px-4 py-2 rounded-0 fw-light">Visita il nostro canale YouTube</a>
+                    <a href="#" class="btn btn-outline-warning px-4 py-2 rounded-0 fw-light">Visita il nostro canale YouTube</a>
                 </div>
             </div>
         </div>
