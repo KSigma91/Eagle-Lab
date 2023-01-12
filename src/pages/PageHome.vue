@@ -13,7 +13,7 @@
                 <hr class="m-auto my-2 opacity-100">
                 <small class="fs-6">Amelia Earhart</small>
             </div>
-            <div class="container-fluid h-25"></div>
+            <!-- <div class="container-fluid h-25"></div> -->
             <div id="gradient"></div>
         </div>
         <div class="tools__container d-flex justify-content-center justify-content-md-center justify-content-lg-start align-items-center">
@@ -41,21 +41,21 @@
         <div>
             <h1 class="p-4">I nostri servizi</h1>
             <div class="services__container d-flex flex-wrap justify-content-center align-items-center gap-4 my-5 text-white">
-                <!-- <div v-for="(service, index) in serviceList" :key="index" class="services__image position-relative d-flex flex-column bg-dark animate__animated animate__backInUp">
+                <div v-for="(service, index) in serviceList" :key="index" class="services__image position-relative d-flex flex-column bg-dark animate__animated animate__backInUp">
                     <img :src="service.img" :alt="service.title" class="img-fluid opacity-50 shadow">
                     <div class="services__text position-absolute top-50 start-50 translate-middle d-flex flex-column justify-content-start align-items-center p-5 w-100">
                         <h4 class="lh-lg">{{ service.title }}</h4>
                         <p>{{ service.desc }}</p>
-                        <a href="services" class="fs-5 text-white animate__animated animate__bounceInLeft"><i class="fas fa-search"></i></a>
+                        <a href="/service" class="fs-5 text-white animate__animated animate__bounceInLeft"><i class="fas fa-search"></i></a>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
         <div class="drone__media d-flex flex-wrap justify-content-center gap-3">
-            <!-- <div v-for="(photo, index) in mediaList" :key="index">
-                <a href=""><img :src="photo.img" class="img-fluid" alt="Boat on Calm Water"/></a>
-            </div> -->
-            <!-- TODO: inserire area YouTube -->
+            <div v-for="(photo, index) in mediaList" :key="index">
+                <a :href="photo.img"><img :src="photo.img" class="img-fluid" alt="Boat on Calm Water"/></a>
+            </div>
+            <!-- area YouTube -->
             <div class="container-fluid d-flex justify-content-center align-items-center gap-5 mb-5">
                 <video width="100%" controls>
                     <source src="../assets/EagleLabLoop_Site.webm" type="video/webm">
@@ -76,7 +76,70 @@
 
 <script>
 export default {
-    name: 'PageHome'
+    name: 'PageHome',
+    data() {
+        return {
+            serviceList: [
+                {
+                    img: require("../assets/S-Andrea-Pano.jpg"),
+                    title: "Riprese aeree",
+                    desc: "Acquisizione immagini e riprese mediante l'utilizzo del drone"
+                },
+                {
+                    img: "https://www.cadlinesw.com/wp-content/uploads/2021/08/software-bim-cadline.jpg",
+                    title: "Ricostruzione 2D e 3D",
+                    desc: "Ricostruzione modelli grafici grazie ai software odierni"
+                },
+                {
+                    img: require("../assets/Consulting.jpg"),
+                    title: "Consulenze tecniche",
+                    desc: "Come trazione per anca per due in infortunistica stradale"
+                }
+            ],
+            mediaList: [
+                {
+                    id: 0,
+                    img: "https://loremflickr.com/320/240"
+                },
+                {
+                    id: 1,
+                    img: "https://loremflickr.com/320/240"
+                },
+                {
+                    id: 2,
+                    img: "https://loremflickr.com/320/240"
+                },
+                {
+                    id: 3,
+                    img: "https://loremflickr.com/320/240"
+                },
+                {
+                    id: 4,
+                    img: "https://loremflickr.com/320/240"
+                },
+                {
+                    id: 5,
+                    img: "https://loremflickr.com/320/240"
+                },
+                {
+                    id: 6,
+                    img: "https://loremflickr.com/320/240"
+                },
+                {
+                    id: 7,
+                    img: "https://loremflickr.com/320/240"
+                },
+                {
+                    id: 8,
+                    img: "https://loremflickr.com/320/240"
+                },
+                {
+                    id: 9,
+                    img: "https://loremflickr.com/320/240"
+                }
+            ]
+        }
+    }
 }
 </script>
 

@@ -3,15 +3,34 @@
         <div class="container">
             <h1 class="p-5">Mavic Air 2S</h1>
             <div class="drone__list card d-flex justify-content-center align-items-center h-100 m-auto p-5 border-0 shadow col-lg-12">
-                <div class="p-5">
+                <div class="p-0 p-md-5 p-lg-5">
                     <img src="../assets/eead2358fecb94ceb86d412f4ca4b67d.png" alt="Mavic_Air_2S">
                 </div>
                 <div class="d-flex flex-wrap justify-content-center">
                     <div v-for="mavic in mavicSpecs" :key="mavic"
                     class="drone__icon d-flex flex-column justify-content-start align-items-center gap-2 p-2 m-3 rounded-4 text-dark">
-                        <!-- <img :src="mavic.icon" :alt="mavic.title">
+                        <img :src="mavic.icon" :alt="mavic.title">
                         <big class="fs-6">{{ mavic.title }}</big>
-                        <p>{{ mavic.text }}</p> -->
+                        <p>{{ mavic.text }}</p>
+                    </div>
+                </div>
+                <div class="my-5">
+                    <video width="90%" autoplay loop>
+                        <source src="../assets/EagleLabLoop_Site.webm">
+                    </video>
+                </div>
+            </div>
+            <h1 class="p-5">Spark</h1>
+            <div class="drone__list card d-flex justify-content-center align-items-center h-100 m-auto p-5 border-0 shadow col-lg-12">
+                <div class="p-0 p-md-5 p-lg-5">
+                    <img src="../assets/toppng.com-dji-spark-top-view-700x608.png" alt="Spark" style="width: 250px">
+                </div>
+                <div class="d-flex flex-wrap justify-content-center">
+                    <div v-for="spark in sparkSpecs" :key="spark"
+                    class="drone__icon d-flex flex-column justify-content-start align-items-center gap-2 p-2 m-3 rounded-4 text-dark">
+                        <img :src="spark.icon" :alt="spark.title">
+                        <big class="fs-6">{{ spark.title }}</big>
+                        <p>{{ spark.text }}</p>
                     </div>
                 </div>
                 <div class="my-5">
@@ -45,7 +64,55 @@
 
 <script>
 export default {
-    name: 'PageTool'
+    name: 'PageTool',
+    data() {
+        return {
+            mavicSpecs: [
+                {
+                    icon: require("../assets/Icone-EagleLab-Lens.png"),
+                    title: "Foto",
+                    text: "20Mp e sensore CMOS da 1\""
+                },
+                {
+                    icon: require("../assets/Icone-EagleLab-Lens-Video.png"),
+                    title: "Video",
+                    text: "Riprese in 5.4K/30fps e 4K/60fps"
+                },
+                {
+                    icon: require("../assets/Icone-EagleLab-battery.png"),
+                    title: "Batteria",
+                    text: "Autonomia di volo di circa 30 minuti"
+                },
+                {
+                    icon: require("../assets/Icone-EagleLab-weight.png"),
+                    title: "Peso",
+                    text: "595g"
+                }
+            ],
+            sparkSpecs: [
+                {
+                    icon: require("../assets/Icone-EagleLab-Lens.png"),
+                    title: "Foto",
+                    text: "12Mp e sensore CMOS 1/2.3”"
+                },
+                {
+                    icon: require("../assets/Icone-EagleLab-Lens-Video.png"),
+                    title: "Video",
+                    text: "Riprese in 1080p/30fps"
+                },
+                {
+                    icon: require("../assets/Icone-EagleLab-battery.png"),
+                    title: "Batteria",
+                    text: "Autonomia di volo di circa 15 minuti"
+                },
+                {
+                    icon: require("../assets/Icone-EagleLab-weight.png"),
+                    title: "Peso",
+                    text: "< 300g"
+                }
+            ]
+        }
+    }
 }
 </script>
 
@@ -79,9 +146,6 @@ export default {
         .drone__icon {
             width: 200px;
             height: 150px;
-            // width: 210px;
-            // height: 210px;
-            //background: #1d1f25;
 
             img {
                 width: auto;
@@ -91,6 +155,10 @@ export default {
 
         video {
             box-shadow: 0 80px 50px -70px #000;
+
+            @media screen and (max-width: 760px) {
+                width: 100%;
+            }
         }
     }
 
@@ -112,6 +180,11 @@ export default {
                 width: 510px;
                 height: 300px;
             }
+
+            @media screen and (max-width: 544px) {
+                width: 340px;
+                height: 300px;
+            }
         }
 
         img {
@@ -126,6 +199,11 @@ export default {
             @media screen and (max-width: 760px) {
                 width: 510px;
                 height: 450px;
+            }
+
+            @media screen and (max-width: 544px) {
+                width: 340px;
+                height: 300px;
             }
         }
     }

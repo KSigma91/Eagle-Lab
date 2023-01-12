@@ -3,25 +3,25 @@
         <div class="container-fluid">
             <h1 class="p-5">Esplora i nostri servizi</h1>
             <div class="d-flex flex-wrap justify-content-center">
-                <!-- <ul v-for="(service, index) in serviceList" :key="index">
+                <ul v-for="(service, index) in serviceList" :key="index">
                     <li class="card d-flex flex-column justify-content-between align-items-center p-5 text-center border border-light border-2 rounded-0 list-unstyled">
                         <img class="mb-3" :src="service.icon" :alt="service.title">
                         <h5>{{ service.title }}</h5>
                         <p class="mt-3 fw-light">{{ service.info }}</p>
                         <a href="#">Scopri di più</a>
                     </li>
-                </ul> -->
+                </ul>
             </div>
         </div>
         <div v-for="(info, index) in serviceInfoList" :key="index" class="bg-section">
             <div class="bg-opacity d-flex justify-content-center bg-dark bg-opacity-50">
                 <div class="col-lg-10">
                     <div class="container d-flex flex-column flex-md-column flex-lg-row justify-content-around align-items-center p-3">
-                        <!-- <div class="d-flex flex-column gap-4 text-wrap text-start text-white p-2">
+                        <div class="d-flex flex-column gap-4 text-wrap text-start text-white p-2">
                             <h1 class="m-0 fw-bold">{{ info.title }}</h1>
                             <h2>lorem</h2>
                             <p>{{ info.text }}</p>
-                        </div> -->
+                        </div>
                         <ul class="card__info list-unstyled d-flex flex-column flex-md-column flex-lg-column align-items-center gap-3 m-auto rounded-3 p-4">
                             <li>
                                 <div class="card__icon d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 p-2">
@@ -86,7 +86,40 @@
 
 <script>
 export default {
-    name: 'PageService'
+    name: 'PageService',
+    data() {
+        return {
+            serviceList: [
+                {
+                    icon: require("../assets/Icone-EagleLab.png"),
+                    title: "Fotografia e ripresa aerea",
+                    info: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim vel obcaecati maiores distinctio delectus impedit blanditiis dolorum odit corrupti, ducimus fugit veniam fugiat architecto repellendus, nesciunt cum sed qui laboriosam?"
+                },
+                {
+                    icon: require("../assets/Icone-EagleLab-3d.png"),
+                    title: "Fotogrammetria aerea",
+                    info: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim vel obcaecati maiores distinctio delectus impedit blanditiis dolorum odit corrupti, ducimus fugit veniam fugiat architecto repellendus, nesciunt cum sed qui laboriosam?"
+                },
+                {
+                    icon: require("../assets/Icone-EagleLab-2d-3d.png"),
+                    title: "Ricostruzione 2D e 3D",
+                    info: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim vel obcaecati maiores distinctio delectus impedit blanditiis dolorum odit corrupti, ducimus fugit veniam fugiat architecto repellendus, nesciunt cum sed qui laboriosam?"
+                },
+                {
+                    icon: require("../assets/Icone-EagleLab-cons.png"),
+                    title: "Consulenze tecniche",
+                    info: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim vel obcaecati maiores distinctio delectus impedit blanditiis dolorum odit corrupti, ducimus fugit veniam fugiat architecto repellendus, nesciunt cum sed qui laboriosam?"
+                },
+            ],
+            serviceInfoList: [
+                {
+                    img: require("../assets/DJI_0618.jpg"),
+                    title: "Lorem",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim vel obcaecati maiores distinctio delectus impedit blanditiis dolorum odit corrupti, ducimus fugit veniam fugiat architecto repellendus, nesciunt cum sed qui laboriosam"
+                }
+            ]
+        }
+    }
 }
 </script>
 

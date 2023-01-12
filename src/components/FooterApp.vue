@@ -15,7 +15,7 @@
             <div class="col text-start">
                 <ul class="list-unstyled fw-light">
                     <li class="mb-3">
-                        <h6>Contatti</h6>
+                        <h6 class="fs-5">Contatti</h6>
                     </li>
                     <li>
                         <i class="fas fa-map-marker-alt me-3"></i>
@@ -42,16 +42,16 @@
             <div class="col text-start">
                 <ul class="list-unstyled fw-light">
                     <li class="mb-3">
-                        <h6>Link utili</h6>
+                        <h6 class="fs-5">Link utili</h6>
                     </li>
                     <li class="my-2">
                         <router-link to="/about" class="text-decoration-none text-white">Contattaci</router-link>
                     </li>
                     <li class="my-2">
-                        <router-link to="/services" class="text-decoration-none text-white">Servizi</router-link>
+                        <router-link to="/service" class="text-decoration-none text-white">Servizi</router-link>
                     </li>
                     <li class="my-2">
-                        <router-link to="/tools" class="text-decoration-none text-white">Strumentazione</router-link>
+                        <router-link to="/tool" class="text-decoration-none text-white">Strumentazione</router-link>
                     </li>
                     <li class="my-2">
                         <router-link to="/gallery" class="text-decoration-none text-white">Galleria</router-link>
@@ -81,6 +81,10 @@ export default {
             width: auto;
             height: 120px;
         }
+    }
+
+    ul:nth-child(1) li {
+        font-size: .9rem;
     }
 
     .gallery {
