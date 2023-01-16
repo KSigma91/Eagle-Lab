@@ -32,4 +32,14 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
+#app::-webkit-scrollbar-track {
+  background: white;
+}
+  
+#app::-webkit-scrollbar-thumb {
+  background-color: #4070F4;
+  border-radius: 20px;
+  border: 1px solid #4070F4;
+}
 </style>

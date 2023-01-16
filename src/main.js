@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
+import VueSweetalert2 from 'vue-sweetalert2';
 
 import Home from './pages/PageHome.vue'
 import Service from './pages/PageService.vue'
@@ -42,6 +43,7 @@ const router = new VueRouter ({
 })
 
 Vue.use(VueRouter)
+Vue.use(VueSweetalert2);
 
 Vue.config.productionTip = false
 

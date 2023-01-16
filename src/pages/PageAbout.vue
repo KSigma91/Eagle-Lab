@@ -14,42 +14,53 @@
         </div>
         <div class="col-md-9 col-lg-8">
             <h3 class="py-5 text-start">Contattaci per informazioni</h3>
-            <form id="app" method="post" @submit="checkForm" action="/" novalidate="true">
-                <div v-if="errors.length" class="text-start text-danger lh-lg">
-                    <ul>
-                        <li v-for="error in errors" :key="error" class="list-unstyled">- {{ error }}</li>
-                    </ul>
-                </div>
-                <!-- Name input -->
-                <div class="form-outline mb-4 text-start">
-                    <label class="form-label fst-italic" for="name">Nome</label>
-                    <input type="text" name="name" placeholder="..." id="name" class="form-control rounded-0" v-model="name" />
-                </div>
-                <!-- Email input -->
-                <div class="form-outline mb-4 text-start">
-                    <label class="form-label fst-italic" for="email">Email</label>
-                    <input type="email" name="email" placeholder="..." id="email" class="form-control rounded-0" v-model="email" />
+            <form ref="form" method="post" @submit.prevent="sendMail">
+                <div class="d-flex flex-wrap gap-3">
+                    <!-- Name input -->
+                    <div class="form-outline mb-4 text-start">
+                        <label class="form-label fst-italic" for="name">Nome <span class="text-danger">*</span></label>
+                        <input type="text" id="name" name="name" class="form-control rounded-0" v-model="name" required />
+                    </div>
+                    <!-- Lastname input -->
+                    <div class="form-outline mb-4 text-start">
+                        <label class="form-label fst-italic" for="email">Cognome <span class="text-danger">*</span></label>
+                        <input type="text" id="lastname" name="lastname" class="form-control rounded-0" v-model="lastname" required />
+                    </div>
+                    <!-- Email input -->
+                    <div class="form-outline mb-4 text-start">
+                        <label class="form-label fst-italic" for="email">Email <span class="text-danger">*</span></label>
+                        <input type="email" id="email" name="email" class="form-control rounded-0" v-model="email" required />
+                    </div>
+                    <!-- Phone input -->
+                    <div class="form-outline mb-4 text-start">
+                        <label class="form-label fst-italic" for="phone">Cellulare</label>
+                        <input type="tel" id="phone" name="phone" class="form-control rounded-0" v-model="phone" />
+                    </div>
                 </div>
                 <!-- Message input -->
                 <div class="form-outline mb-4 text-start">
                     <label class="form-label fst-italic" for="message">Messaggio</label>
-                    <textarea type="text" name="message" placeholder="..." id="message" class="form-control rounded-0" rows="4" v-model="message"></textarea>
+                    <textarea type="text" id="message" name="message" class="form-control rounded-0" rows="8" v-model="message" required></textarea>
                 </div>
                 <!-- Submit button -->
-                <input type="submit" value="Invia" class="btn btn-outline-warning btn-block rounded-0 mb-4 px-4">
+                <input type="submit" value="Invia" class="btn btn-outline-warning btn-block rounded-0 mb-4 px-4" @click="showAlert">
             </form>
         </div>
     </div>
 </template>
 
 <script>
+import emailjs from '@emailjs/browser'; 
+import Swal from 'sweetalert2' 
+
 export default {
     name: 'PageAbout',
     data() {
         return {
-            errors: [],
             name: "",
+            lastname: "",
             email: "",
+            phone: "",
             message: "",
             pilotProfile: [
                 {
@@ -66,28 +77,32 @@ export default {
         }
     },
     methods: {
-        checkForm(e) {
-            this.errors = [];
-            if (!this.name) {
-                this.errors.push("Il nome è richiesto");
-            }
-            if (!this.email) {
-                this.errors.push("L'email è richiesta");
-            } else if (!this.validEmail(this.email)) {
-                this.errors.push("E' richiesta un'email valida");
-            }
-            if (!this.message) {
-                this.errors.push("Il messaggio è richiesto")
-            }
-            if (!this.errors.length) {
-                return true;
-            }
-
-            e.preventDefault();
+        sendMail(event) {
+            event.preventDefault();
+            emailjs.sendForm('service_6be7r0c', 'template_rnslkem', this.$refs.form,  'cUDgm2mMCKvxUT_sl')
+            .then((result) => {
+                console.log('Success', result.status, result.text);
+            }, (error) => {
+                console.log('Error', error);
+            });
+            event.target.reset();
         },
-        validEmail(email) {
-            const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return re.test(email);
+        showAlert() {
+            if (!this.name || !this.lastname || !this.email.includes('@') || !this.email.includes('.') || !this.message) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Si è verificato un errore',
+                    text: 'Invio messaggio non riuscito',
+                    confirmButtonColor: '#3085d6'
+                });
+            } else {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Ben fatto!',
+                    text: 'Messaggio inviato con successo',
+                    confirmButtonColor: '#3085d6'
+                });
+            }
         }
     }
 }

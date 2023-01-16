@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="card border-0 p-0 shadow">
-                    <div class="card-header p-3 border-0 bg-primary"><h5 class="m-0">Pacchetto 2</h5></div>
+                    <div class="card-header p-3 border-0 bg-secondary"><h5 class="m-0">Pacchetto 2</h5></div>
                     <div class="card-body d-flex flex-column justify-content-around">
                         <div class="card-title m-0"><h1>500 &euro;</h1></div>
                         <p class="card-text px-3 lh-lg">
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="card border-0 p-0 shadow">
-                    <div class="card-header p-3 border-0 bg-success"><h5 class="m-0">Pacchetto 3</h5></div>
+                    <div class="card-header p-3 border-0 bg-info"><h5 class="m-0">Pacchetto 3</h5></div>
                     <div class="card-body d-flex flex-column justify-content-around">
                         <div class="card-title m-0"><h1>800 &euro;</h1></div>
                         <p class="card-text px-3 lh-lg">
