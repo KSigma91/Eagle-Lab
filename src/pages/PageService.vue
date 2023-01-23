@@ -3,8 +3,8 @@
         <div class="container-fluid">
             <h1 class="p-5">Esplora i nostri servizi</h1>
             <div class="d-flex flex-wrap justify-content-center">
-                <ul v-for="(service, index) in serviceList" :key="index">
-                    <li class="card d-flex flex-column justify-content-between align-items-center p-5 text-center border border-light border-2 rounded-0 list-unstyled">
+                <ul v-for="(service, index) in serviceList" :key="index" class="p-0">
+                    <li class="card d-flex flex-column justify-content-between align-items-center p-5 mx-2 text-center border border-light border-2 rounded-0 list-unstyled">
                         <img class="mb-3" :src="service.icon" :alt="service.title">
                         <h5>{{ service.title }}</h5>
                         <p class="mt-3 fw-light">{{ service.info }}</p>
@@ -124,13 +124,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.carousel {
-    
-    img {
-        height: 92vh;
-    }
-}
-
 .container-fluid {
     width: 100%; 
 

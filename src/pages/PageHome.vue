@@ -176,10 +176,10 @@ export default {
 }
 
 .tools__container {
-    height: 60vh;
+    height: 80vh;
     background-color: #2E2E37;
     background-image: url(../assets/mavic.png);
-    background-position: bottom 20px left 800px;
+    background-position: bottom 200px left 800px;
     background-size: 55%;
     background-repeat: no-repeat;
 
@@ -211,7 +211,7 @@ export default {
 }
 
 .pilot__container {
-    height: 60vh;
+    height: 80vh;
     background-image: url(../assets/Apr-Pilot.png);
     background-size: 70%;
     background-repeat: no-repeat;
@@ -308,6 +308,13 @@ export default {
         @media screen and (max-width: 1399px) {
             display: flex;
             flex-direction: column;
+        }
+
+        video {
+
+            @media screen and (max-width: 444px) {
+                width: 330px;
+            }
         }
 
         p {
