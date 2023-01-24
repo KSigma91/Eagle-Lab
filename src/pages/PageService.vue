@@ -47,7 +47,7 @@
             </div>
         </div>
         <div class="price">
-            <h1 class="p-5">Confronta i nostri prezzi e paga</h1>
+            <h1 class="p-5">Confronta i nostri prezzi e richiedi un consulto</h1>
             <div class="container d-flex flex-wrap justify-content-center gap-5 my-5">
                 <div class="card border-0 p-0 shadow">
                     <div class="card-header p-3 border-0"><h5 class="m-0">Pacchetto 1</h5></div>

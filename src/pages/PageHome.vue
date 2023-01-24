@@ -93,7 +93,7 @@ export default {
                 {
                     img: require("../assets/Consulting.jpg"),
                     title: "Consulenze tecniche",
-                    desc: "Come trazione per anca per due in infortunistica stradale"
+                    desc: "Consulto tecnico per infortunistica stradale"
                 }
             ],
             mediaList: [
